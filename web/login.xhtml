@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+       
+        <style>
+            /* Ajoutez des styles CSS personnalisés ici */
+            body {
+                background-color: #f8f9fa; /* Couleur de fond */
+            }
+
+            .container {
+                max-width: 400px; /* Largeur maximale du conteneur */
+            }
+
+            .login-form {
+                padding: 20px;
+                background-color: #ffffff; /* Couleur de fond du formulaire */
+                border: 1px solid #ced4da; /* Bordure du formulaire */
+                border-radius: 8px; /* Coins arrondis */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            }
+
+            .form-label {
+                color: #007bff; /* Couleur du texte des labels */
+            }
+
+            .form-control {
+                border-color: #007bff; /* Couleur de la bordure des champs de saisie */
+            }
+
+            .form-control:focus {
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Ombre lorsqu'un champ est en focus */
+                border-color: #007bff; /* Couleur de la bordure lorsqu'un champ est en focus */
+            }
+
+            .btn-primary {
+                background-color: #007bff; /* Couleur de fond du bouton */
+                border-color: #007bff; /* Couleur de la bordure du bouton */
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3; /* Couleur de fond du bouton lorsqu'il est survolé */
+                border-color: #0056b3; /* Couleur de la bordure du bouton lorsqu'il est survolé */
+            }
+
+            .btn-link {
+                color: #007bff; /* Couleur du texte des liens de type bouton */
+            }
+
+            .btn-link:hover {
+                color: #0056b3; /* Couleur du texte des liens de type bouton lorsqu'ils sont survolés */
+            }
+        </style>
+    </h:head>
+
+    <h:body>
+
+        <f:view>
+
+            <div class="container mt-5">
+
+                <h:form id="login_form" styleClass="login-form">
+
+                    <h:messages id="msgs" />
+
+                    <h2 class="text-center mb-4">Login</h2>
+
+                    <div class="mb-3">
+                        <h:outputLabel for="username" value="User Name" class="form-label" />
+                        <h:inputText id="username" value="#{usersMB.users.userName}" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <h:outputLabel for="password" value="Password" class="form-label" />
+                        <h:inputSecret id="password" value="#{usersMB.users.password}" class="form-control" />
+                    </div>
+
+                    <h:commandButton value="Login" action="#{usersMB.loginCheck()}" styleClass="btn btn-primary mb-3" />
+
+                    <h:link outcome="register" value="Register Page" class="btn btn-link" />
+
+                </h:form>
+
+            </div>
+
+        </f:view>
+
+    </h:body>
+</html>
